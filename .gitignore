@@ -1,0 +1,19 @@
+# MPLAB build artifacts
+build/
+dist/
+
+# MPLAB private configs
+nbproject/private/
+
+# Compiled output
+*.hex
+*.elf
+*.map
+*.p1
+*.sdb
+*.lst
+*.d
+*.o
+
+# Backup/temp
+*~
