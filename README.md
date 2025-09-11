@@ -15,7 +15,7 @@ This project implements a **remote-controlled fan** using the **PIC16F887** micr
 ## 📸 Device Preview
 
 <p align="center">
-  <img src="assets/fan_controller.png" alt="Fan Controller Preview" width="500"/>
+  <img src="assets/image.png" alt="Fan Controller Preview" width="500"/>
 </p>
 
 ---
@@ -93,6 +93,8 @@ This project implements a **remote-controlled fan** using the **PIC16F887** micr
 ## 📂 Project Structure
 
 remote-fan-controller/
+├── assets/ # Images etc.
+│ ├── image.png
 ├── include/ # Header files
 │ ├── admin_functions.h
 │ ├── blink_swing.h
