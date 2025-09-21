@@ -92,6 +92,7 @@ This project implements a **remote-controlled fan** using the **PIC16F887** micr
 
 ## 📂 Project Structure
 
+'''
 remote-fan-controller/
 ├─ assets/                 # Images etc.
 │  └─ image.png
@@ -137,6 +138,7 @@ remote-fan-controller/
 ├─ main.c                  # Main entry point
 ├─ README.md               # This file
 └─ LICENSE                 # MIT License
+'''
 
 ---
 
