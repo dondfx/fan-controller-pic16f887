@@ -7,33 +7,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    # Run inside the XC8 container
     container:
-      image: ghcr.io/feilipu/microchip-xc8:2.45
-      # Authenticate to GHCR (handles private images, rate limits, org policies)
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+      image: docker.io/feilipu/microchip-xc8:latest   # <-- Docker Hub
 
     env:
       PROJECT_DIR: .
       CONF: default
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Show toolchain
         run: |
           xc8-cc --version || true
-          mplabx-ide --version || true
+          ls -la /opt/microchip || true
 
       - name: Build with MPLAB makefile
         working-directory: ${{ env.PROJECT_DIR }}
         run: |
           make -f nbproject/Makefile-${CONF}.mk SUBPROJECTS= .build-conf
-          echo "Listing dist output (if any):"
           ls -R dist || true
 
       - name: Upload HEX artifact
@@ -43,4 +35,4 @@ jobs:
           path: |
             dist/${{ env.CONF }}/production/*.hex
             dist/${{ env.CONF }}/production/*.elf
-          if-no-files-found: ignore   # don't blow up if build failed/empty
+          if-no-files-found: ignore
