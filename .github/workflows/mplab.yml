@@ -8,13 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # Use a container that already has MPLAB X + XC8 installed.
-    # If you use a different image, just swap the container line below.
+    # Run inside the XC8 container
     container:
       image: ghcr.io/feilipu/microchip-xc8:2.45
+      # Authenticate to GHCR (handles private images, rate limits, org policies)
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     env:
-      # Change this if your .X folder has a different name
       PROJECT_DIR: .
       CONF: default
 
@@ -27,19 +29,18 @@ jobs:
           xc8-cc --version || true
           mplabx-ide --version || true
 
-      # If your repo contains an MPLAB X project (.X),
-      # the NetBeans makefile is already present—just call it:
       - name: Build with MPLAB makefile
         working-directory: ${{ env.PROJECT_DIR }}
         run: |
           make -f nbproject/Makefile-${CONF}.mk SUBPROJECTS= .build-conf
+          echo "Listing dist output (if any):"
           ls -R dist || true
 
       - name: Upload HEX artifact
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: firmware-${{ env.CONF }}
           path: |
-            ${{ env.PROJECT_DIR }}/dist/${{ env.CONF }}/production/*.hex
-            ${{ env.PROJECT_DIR }}/dist/${{ env.CONF }}/production/*.elf
+            dist/${{ env.CONF }}/production/*.hex
+            dist/${{ env.CONF }}/production/*.elf
+          if-no-files-found: ignore   # don't blow up if build failed/empty
