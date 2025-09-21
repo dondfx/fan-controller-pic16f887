@@ -15,7 +15,7 @@ jobs:
 
     env:
       # Change this if your .X folder has a different name
-      PROJECT_DIR: Fan_Controller.X
+      PROJECT_DIR: .
       CONF: default
 
     steps:
