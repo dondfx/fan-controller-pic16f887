@@ -93,50 +93,50 @@ This project implements a **remote-controlled fan** using the **PIC16F887** micr
 ## 📂 Project Structure
 
 remote-fan-controller/
-├── assets/ # Images etc.
-│ ├── image.png
-├── include/ # Header files
-│ ├── admin_functions.h
-│ ├── blink_swing.h
-│ ├── button_handler.h
-│ ├── debug_support.h
-│ ├── decoder_buffer.h
-│ ├── delay_ms.h
-│ ├── delay_off.h
-│ ├── external_interrupt_conf.h
-│ ├── io_definitions.h
-│ ├── iocb_config.h
-│ ├── ir_definitions.h
-│ ├── ir_functions.h
-│ ├── pwm_config.h
-│ ├── timer0_conf.h
-│ ├── timer1_conf.h
-│ ├── timer2_config.h
-│ ├── triac_control.h
-│ ├── uart_conf.h
-│ └── uart_support.h
-├── src/ # Source files
-│ ├── admin_functions.c
-│ ├── blink_swing.c
-│ ├── button_handler.c
-│ ├── debug_support.c
-│ ├── decoder_buffer.c
-│ ├── delay_ms.c
-│ ├── delay_off.c
-│ ├── external_interrupt_conf.c
-│ ├── io_definitions.c
-│ ├── iocb_config.c
-│ ├── ir_functions.c
-│ ├── pwm_config.c
-│ ├── timer0_conf.c
-│ ├── timer1_conf.c
-│ ├── timer2_config.c
-│ ├── triac_control.c
-│ ├── uart_conf.c
-│ └── uart_support.c
-├── main.c # Main entry point
-├── README.md # This file
-└── LICENSE # MIT License
+├─ assets/                 # Images etc.
+│  └─ image.png
+├─ include/                # Header files
+│  ├─ admin_functions.h
+│  ├─ blink_swing.h
+│  ├─ button_handler.h
+│  ├─ debug_support.h
+│  ├─ decoder_buffer.h
+│  ├─ delay_ms.h
+│  ├─ delay_off.h
+│  ├─ external_interrupt_conf.h
+│  ├─ io_definitions.h
+│  ├─ iocb_config.h
+│  ├─ ir_definitions.h
+│  ├─ ir_functions.h
+│  ├─ pwm_config.h
+│  ├─ timer0_conf.h
+│  ├─ timer1_conf.h
+│  ├─ timer2_config.h
+│  ├─ triac_control.h
+│  ├─ uart_conf.h
+│  └─ uart_support.h
+├─ src/                    # Source files
+│  ├─ admin_functions.c
+│  ├─ blink_swing.c
+│  ├─ button_handler.c
+│  ├─ debug_support.c
+│  ├─ decoder_buffer.c
+│  ├─ delay_ms.c
+│  ├─ delay_off.c
+│  ├─ external_interrupt_conf.c
+│  ├─ io_definitions.c
+│  ├─ iocb_config.c
+│  ├─ ir_functions.c
+│  ├─ pwm_config.c
+│  ├─ timer0_conf.c
+│  ├─ timer1_conf.c
+│  ├─ timer2_config.c
+│  ├─ triac_control.c
+│  ├─ uart_conf.c
+│  └─ uart_support.c
+├─ main.c                  # Main entry point
+├─ README.md               # This file
+└─ LICENSE                 # MIT License
 
 ---
 
@@ -158,7 +158,7 @@ This project uses **MPLAB X IDE** with the **XC8 compiler**.
 
 ## 🔧 Configuration Notes
 
-- All header and source files have been **renamed to lowercase** for portability.  
+- All header and source files are written with **portability** in mind
 - Configuration bits (`#pragma config`) are already set inside `main.c`.  
 - No additional MPLAB settings are required apart from including all files in the project.  
 
