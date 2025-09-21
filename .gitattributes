@@ -1,3 +1,12 @@
+# Force C as primary language
 *.c linguist-language=C
 *.h linguist-language=C
-Makefile linguist-vendored
+
+# Exclude makefiles and generated/build output from language stats
+[Mm]akefile linguist-vendored
+**/*.mk linguist-vendored
+**/*.mak linguist-vendored
+nbproject/** linguist-vendored
+build/** linguist-vendored
+debug/** linguist-vendored
+dist/** linguist-vendored
