@@ -21,7 +21,7 @@ This project implements a **remote-controlled fan** using the **PIC16F887** micr
 ## ✅ Features
 
 - 🎛️ **TRIAC-Based Fan Speed Control**  
-  Provides three discrete speed levels (LOW, MEDIUM, HIGH) and full OFF.
+  Provides three discrete speed levels (LOW, MEDIUM, HIGH) and OFF.
 
 - 🌬️ **Swing Control**  
   Toggle swing function via IR remote or push button.
