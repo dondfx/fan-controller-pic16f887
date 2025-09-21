@@ -1,7 +1,5 @@
 # 🌀 Remote Controlled Fan Controller
 
-[![MPLAB CI](https://github.com/dondfx/remote-fan-controller/actions/workflows/mplab.yml/badge.svg)](https://github.com/dondfx/remote-fan-controller/actions/workflows/mplab.yml)
-
 A modular PIC16F887-based embedded system that controls a wall fan with IR remote support, push-button input, visual LED indicators, PWM buzzer, and TRIAC-based speed/swing control.
 
 ---
